@@ -53,3 +53,7 @@ h1 {
     text-align: right;
 
 }
+ul
+{
+    list-style-type: none;
+}
