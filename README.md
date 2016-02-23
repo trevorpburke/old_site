@@ -1,3 +1,3 @@
 # This is my website
 
-Check out [my website](trevorpburke.github.io)
+Check out [my website](http://trevorpburke.github.io/)
