@@ -21,11 +21,35 @@
 
 		<script>
 		L.mapbox.accessToken = 'pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A';
+
+		var gpx_array = ['stravaRuns/20150711-144059-Run.gpx', 
+						"stravaRuns/20150716-233605-Run.gpx",
+						"stravaRuns/20150726-163103-Run.gpx",
+						"stravaRuns/20150727-145512-Run.gpx",
+						"stravaRuns/20150730-010120-Run.gpx",
+						"stravaRuns/20150731-234045-Run.gpx",
+						"stravaRuns/20150802-130541-Run.gpx",
+						"stravaRuns/20150803-094237-Run.gpx",
+						"stravaRuns/20150806-092744-Run.gpx",
+						"stravaRuns/20150809-113252-Run.gpx",
+						"stravaRuns/20150810-215259-Run.gpx",
+						"stravaRuns/20150812-231332-Run.gpx",
+						"stravaRuns/20150814-002041-Run.gpx",
+						"stravaRuns/20150815-145734-Run.gpx",
+						"stravaRuns/20150711-144059-Run.gpx"]
 		
 		var map = L.mapbox.map('map', 'mapbox.streets')
     		.setView([44.35, -68.3], 11);
 
-    	// add 
+    	var runLayer = gpx_array.map(function(file){
+    		return omnivore.gpx(file)
+    			.on('ready', function(){
+    				map.fitBounds(runLayer.getBounds());
+    			})
+
+    	})
+
+    	/* add 
     	var runLayer = omnivore.gpx('stravaRuns/20150711-144059-Run.gpx')
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
@@ -46,6 +70,7 @@
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
+    		*/
 
 		</script>
 
