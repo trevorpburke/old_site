@@ -25,7 +25,7 @@
 		var map = L.mapbox.map('map', 'mapbox.streets')
     		.setView([44.35, -68.3], 11);
 
-    	var runLayer = omnivore.gpx('stravaRuns')
+    	var runLayer = omnivore.gpx('stravaRuns/20150711-144059-Run.gpx', 'stravaRuns/20150713-224231-Run.gpx')
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
