@@ -25,12 +25,23 @@
 		var map = L.mapbox.map('map', 'mapbox.streets')
     		.setView([44.35, -68.3], 11);
 
+    	// add 
     	var runLayer = omnivore.gpx('stravaRuns/20150711-144059-Run.gpx')
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    	var runLayer = omnivore.gpx('stravaRuns/20150713-224231-Run.gpx')
+    	var runLayer1 = omnivore.gpx('stravaRuns/20150713-224231-Run.gpx')
+    		.on('ready', function() {
+        		map.fitBounds(runLayer.getBounds());
+    		})
+    		.addTo(map);
+    	var runLayer2 = omnivore.gpx('stravaRuns/20150716-233605-Run.gpx')
+    		.on('ready', function() {
+        		map.fitBounds(runLayer.getBounds());
+    		})
+    		.addTo(map);
+    	var runLayer1 = omnivore.gpx('stravaRuns/20150726-163103-Run.gpx')
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
