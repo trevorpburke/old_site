@@ -36,41 +36,41 @@
 						"stravaRuns/20150812-231332-Run.gpx",
 						"stravaRuns/20150814-002041-Run.gpx",
 						"stravaRuns/20150815-145734-Run.gpx",
-						"stravaRuns/20150711-144059-Run.gpx"]
+						"stravaRuns/20150711-144059-Run.gpx"];
 		
 		var map = L.mapbox.map('map', 'mapbox.streets')
     		.setView([44.35, -68.3], 11);
-
+    	/*
     	var runLayer = gpx_array.map(function(file){
     		return omnivore.gpx(file)
     			.on('ready', function(){
     				map.fitBounds(runLayer.getBounds());
     			})
 
-    	})
+    	})*/
 
-    	/* add 
-    	var runLayer = omnivore.gpx('stravaRuns/20150711-144059-Run.gpx')
+    	// add 
+    	var runLayer = omnivore.gpx(gpx_array[0])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    	var runLayer1 = omnivore.gpx('stravaRuns/20150713-224231-Run.gpx')
+    	var runLayer1 = omnivore.gpx(gpx_array[1])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    	var runLayer2 = omnivore.gpx('stravaRuns/20150716-233605-Run.gpx')
+    	var runLayer2 = omnivore.gpx(gpx_array[2])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    	var runLayer1 = omnivore.gpx('stravaRuns/20150726-163103-Run.gpx')
+    	var runLayer1 = omnivore.gpx(gpx_array[3])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    		*/
+    	
 
 		</script>
 
