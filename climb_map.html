@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>The Ulimate Climbing Roadtrip</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+.mapboxgl-popup {
+    max-width: 400px;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.marker-title {
+    font-weight: 700;
+}
+
+#map {
+    position: fixed;
+    width:50%;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0px;
+}
+</style>
+
+<div id='map'></div>
+<div id='features'>
+    <section id='sf' class='active'>
+        <h1 id="title">The Ultimate Climbing Road Trip</h1>
+        </br>
+        <h3>San Francisco</h3>
+        <p>The ultimate summer climbing roadtrip begins in San Francisco. Arguably the best major city for any outdoors enthusiast. With world class skiing and climbing less than 4 hours away San Francisco is truly a city for weekend warriors and diehard climbers alike.</p>
+    </section>
+    <section id='needles'>
+        <h3>The Needles, CA</h3>
+        <p>Home to picturesque granite spires the Needles is a climber's paradise. The area boasts pristine rock, adventurous routes, and few people. Known for its impressive crack climbs the Needles also hosts a few classic face climbs though they aren't for the faint of heart. <em>Igor Unchained, Airy Interlude, Lost at Sea,</em> and <em>Atlantis</em> should be on every climber's tick list.</p>
+    </section>
+    <section id='yosemite'>
+        <h3>Yosemite</h3>
+        <p>Perfect granite cracks, towering walls, and endless sunshine. Yosemite Valley is the Mecca of rock climbing. With hundreds of climbs ranging from one pitch crack testpieces to beautiful face climbs to massive big wall adventures Yosemite has something for everyone. Yosemite Valley climbs demand excellent crack technique and perfect footwork, but reward climbers with breathtaking views. With classics like <em>The Nose</em> and <em>Serenity Crack to Sons of Yesterday</em> it's impossible to get sick of Yosemite rock climbing.</p>
+    </section>
+    <section id='smith'>
+        <h3>Smith Rock, OR</h3>
+        <p>Located just north of the beer mecca of Bend,Oregon, Smith Rock is the destination for climbing in Oregon. With over 1,500 routes ranging from 5.7 to 5.14a Smith Rock offers climbs of all abilities. Smith Rock has some of the finest sport climbs on the West Coast. In the summer chase the shade as this Central Oregon crag can get pretty hot in the summertime.</p>
+    </section>
+    <section id='index'>
+        <h3>Index, WA</h3>
+        <p>The best, steep granite in Washington state. Index is not for the faint of heart with routes starting at 5.9 and most classics hovering around 5.10 and up. If hard cracks on perfect stone are your thing then you can't pass up a trip to Index.</p>
+    </section>
+    <section id='squamish'>
+        <h3>Squamish, BC</h3>
+        <p>Squamish just might be the best all around climbing town. Not only does it offer world-class long free climbs, but dozens of incredible granite boulders make for endless sessions in the picturesque forests of the Pacific Northwest. In Squamish you can climb scary highballs, epic big wall free climbs, and technical sport climbs all in one day.</p>
+    </section>
+    <section id='cityOfRocks'>
+        <h3>City of Rocks, ID</h3>
+        <p>Granite pocket and edges define the climbing at City of Rocks in rural Idaho. Incredible scenery dots the landscape as you explore the numerous crags at this climbing destination. Bring your rack up some of these sport climbs because a lot of the climbs need gear!</p>
+    </section>
+    <section id='jackson'>
+        <h3>Grand Teton National Park, WY</h3>
+        <p>Make sure to pack your approach shoes, crampons, and ice ax for Grand Teton National Park. Located outside of skiing mecca Jackson, WY the Grand lures climbers to its craggy summit. With summit-reaching routes starting at 5.4 getting to the top of the Grand is accessible to many. More alpine objectives exist that will require an alpine rack complete with crampons and maybe even an ice ax.</p>
+    </section>
+    <section id='winds'>
+        <h3>Wind River Range, WY</h3>
+        <p>Home of two <em>50 Classic Climbs of North America</em>, <em>The South Buttress of Pingora</em> and <em>The East Ridge of Wolf's Head,</em> this is an alpine climber's paradise. Soaring granite peaks in an unbelievable alpine meadow setting provide a lifetime of objectives. A long hike into the range rewards climbers with excellent climbing and just as excellent fly fishing. Two trips in one!</p>
+    </section>
+    <section id='eldo'>
+        <h3>Eldorado Canyon, CO</h3>
+        <p>Eldorado Canyon – loved by many, respected by all – offers a wide range of climbing close to Boulder, Colorado. CLimbers can test their mettle on hard crack and face climbs or enjoy the many long multipitch climbs that make Eldorado Canyon a favorite among Colorado climbers.</p>
+    </section>
+    <section id='rifle'>
+        <h3>Rifle, CO</h3>
+        <p>Inarguably the best limestone sport climbing crag in the country. Rifle offers dozens of hard and very hard long, overhanging climbs that really test your power endurance. Rifle hosts an incredibly high concentration of 5.13 to 5.14 sport routes, so you may see your favorite professional climber working their project. The controversial kneebar owes its roots to Rifle and many consider it to be an essential item in your pack.</p>
+    </section>
+    <section id='maple'>
+        <h3>Maple Canyon, UT</h3>
+        <p style="padding: 0 0em 40em 0;">
+        Utah's sport climbing destination. Maple Canyon consists of conglomerate rock with unique-looking cobbles that range from slopers to crimpers. Excellent summer destination with ice forming in the winter season.</p>
+    </section>
+    <section id="credit">
+        <p><em>Some descriptions paraphrased from users on MountainProject.com</em></p>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
