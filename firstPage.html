@@ -20,6 +20,7 @@
 	<div id='map'></div>
 
 		<script>
+		
 		L.mapbox.accessToken = 'pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A';
         var map = L.mapbox.map('map', 'mapbox.streets')
             .setView([44.35, -68.3], 11);
@@ -42,12 +43,13 @@
                         "stravaRuns/20150711-144059-Run.gpx"];
 
         // add all gpx files to map 
-        
+        /*
         var runLayer = omnivore.gpx(gpx_array[0])
             .on('ready', function() {
                 map.fitBounds(runLayer.getBounds());
             })
             .addTo(map);
+        */
         var runLayer1 = omnivore.gpx(gpx_array[1])
             .on('ready', function() {
                 map.fitBounds(runLayer.getBounds());
