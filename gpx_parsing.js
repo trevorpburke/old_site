@@ -110,5 +110,4 @@ L.mapbox.accessToken = 'pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Y
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    	map = L.mapbox.map('map', 'mapbox.streets')
-		   	.setView([44.35, -68.3], 11);
+    	map = .setView([44.35, -68.3], 11);
