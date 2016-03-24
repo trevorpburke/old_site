@@ -1,4 +1,6 @@
         L.mapbox.accessToken = 'pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A';
+        var map = L.mapbox.map('map', 'mapbox.streets')
+            .setView([44.35, -68.3], 11);
         var gpx_array = ['stravaRuns/20150711-144059-Run.gpx', 
                         "stravaRuns/20150716-233605-Run.gpx",
                         "stravaRuns/20150726-163103-Run.gpx",
@@ -91,5 +93,4 @@
                 map.fitBounds(runLayer.getBounds());
             })
             .addTo(map);
-        var map = L.mapbox.map('map', 'mapbox.streets')
-            .setView([44.35, -68.3], 11);
+        
