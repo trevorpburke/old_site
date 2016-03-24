@@ -18,12 +18,12 @@
                         "stravaRuns/20150711-144059-Run.gpx"];
 
         // add all gpx files to map 
-        //var runLayer = omnivore.gpx(gpx_array[0])
+        var runLayer = omnivore.gpx(gpx_array[0])
             .on('ready', function() {
                 map.fitBounds(runLayer.getBounds());
             })
             .addTo(map);
-        //var runLayer1 = omnivore.gpx(gpx_array[1])
+        var runLayer1 = omnivore.gpx(gpx_array[1])
             .on('ready', function() {
                 map.fitBounds(runLayer.getBounds());
             })
