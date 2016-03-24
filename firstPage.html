@@ -44,7 +44,7 @@
     	var runLayer = gpx_array.map(function(file){
     		return omnivore.gpx(file)
     			.on('ready', function(){
-    				map.fitBounds(runLayer.getBounds());
+    				map.fitBounds();
     			})
 
     	})
