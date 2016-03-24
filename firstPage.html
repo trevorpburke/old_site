@@ -40,16 +40,17 @@
 		
 		var map = L.mapbox.map('map', 'mapbox.streets')
     		.setView([44.35, -68.3], 11);
-    	/*
+    	
     	var runLayer = gpx_array.map(function(file){
-    		return omnivore.gpx(file)
+    		omnivore.gpx(file)
     			.on('ready', function(){
     				map.fitBounds(runLayer.getBounds());
     			})
 
-    	})*/
+    	})
 
     	// add 
+    	/*
     	var runLayer = omnivore.gpx(gpx_array[0])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
@@ -134,8 +135,7 @@
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-	
-    	
+		*/
 
 		</script>
 
