@@ -37,10 +37,10 @@
 						"stravaRuns/20150814-002041-Run.gpx",
 						"stravaRuns/20150815-145734-Run.gpx",
 						"stravaRuns/20150711-144059-Run.gpx"];
-		
-		var map = L.mapbox.map('map', 'mapbox.streets')
-    		.setView([44.35, -68.3], 11);
     	/*
+
+		// trying to map the omnivore.gpx() function to an array of all my GPX files
+
     	var runLayer = gpx_array.map(function(file){
     		omnivore.gpx(file)
     			.on('ready', function(){
@@ -49,14 +49,12 @@
     	})
     	*/
 
-    	// add 
-    	
-    	var runLayer = omnivore.gpx(gpx_array)
+    	// add all gpx files to map 
+    	var runLayer = omnivore.gpx(gpx_array[0])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-    	/*
     	var runLayer1 = omnivore.gpx(gpx_array[1])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
@@ -72,7 +70,6 @@
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-
         var runLayer4 = omnivore.gpx(gpx_array[4])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
@@ -83,7 +80,6 @@
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-
     	var runLayer6 = omnivore.gpx(gpx_array[6])
     		.on('ready', function() {
         		map.fitBounds(runLayer.getBounds());
@@ -136,7 +132,9 @@
         		map.fitBounds(runLayer.getBounds());
     		})
     		.addTo(map);
-		*/
+
+    var map = L.mapbox.map('map', 'mapbox.streets')
+    		.setView([44.35, -68.3], 11);
 
 		</script>
 
