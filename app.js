@@ -1,5 +1,6 @@
 mapboxgl.accessToken = "pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A";
 var markers = {
+    // TODO: add real-time, basic weather data to popups with basic weather images [sunny, partly cloudy, overcast, snowy, rainy, etc] 
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
@@ -9,7 +10,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-118.5044, 36.1214]
+            "coordinates": "locations.sf.center"
         }
     }, {
         "type": "Feature",
@@ -19,7 +20,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-119.5936, 37.7455]
+            "coordinates": "locations.needles.center"
         }
     }, {
         "type": "Feature",
@@ -29,7 +30,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-121.1389, 44.3676]
+            "coordinates": "location.yosemite.center"
         }
     }, {
         "type": "Feature",
@@ -39,7 +40,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-121.5551, 47.8206]
+            "coordinates": "location.index.center"
         }
     }, {
         "type": "Feature",
@@ -49,7 +50,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-123.1349, 49.6866]
+            "coordinates": "location.squamish.center"
         }
     }, {
         "type": "Feature",
@@ -59,7 +60,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-113.724, 42.0778]
+            "coordinates": "location.cityOfRocks.center"
         }
     }, {
         "type": "Feature",
@@ -69,7 +70,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-110.731201, 43.797665]
+            "coordinates": "location.jackson.center"
         }
     }, {
         "type": "Feature",
@@ -79,7 +80,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-109.204, 42.7551]
+            "coordinates": "location.winds.center"
         }
     }, {
         "type": "Feature",
@@ -89,7 +90,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-105.2950, 39.9307]
+            "coordinates": "location.eldo.center"
         }
     }, {
         "type": "Feature",
@@ -99,7 +100,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-107.6912, 39.7159]
+            "coordinates": "location.rifle.center"
         }
     },
     {
@@ -110,7 +111,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": [-111.6867, 39.5564]
+            "coordinates": "location.maple.center"
         }
     },
     ]
@@ -270,7 +271,9 @@ var locations = {
 window.onscroll = function() {
     var locationNames = Object.keys(locations);
     for (var i = 0, x = locationNames.length; i < x; i++) {
+        // does locationName contain an array of location names? or what?
         var locationName = locationNames[i];
+        // if the function 'isElementOnScreen' defined below runs TRUE then setActiveLocation will be run 
         if (isElementOnScreen(locationName)) {
             setActiveLocation(locationName);
             break;
@@ -280,13 +283,14 @@ window.onscroll = function() {
 
 var activeLocationName = 'sf';
 function setActiveLocation(locationName) {
+    // not sure what this means below
     if (locationName === activeLocationName) return;
 
     map.flyTo(locations[locationName]);
 
     document.getElementById(locationName).setAttribute('class', 'active');
     document.getElementById(activeLocationName).setAttribute('class', '');
-
+    
     activeLocationName = locationName;
 }
 
