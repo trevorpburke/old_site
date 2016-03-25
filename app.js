@@ -1,6 +1,6 @@
 mapboxgl.accessToken = "pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A";
+// TODO: add real-time, basic weather data to popups with basic weather images [sunny, partly cloudy, overcast, snowy, rainy, etc] 
 var markers = {
-    // TODO: add real-time, basic weather data to popups with basic weather images [sunny, partly cloudy, overcast, snowy, rainy, etc] 
     "type": "FeatureCollection",
     "features": [{
         "type": "Feature",
@@ -10,7 +10,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "locations.sf.center"
+            "coordinates": [-118.5044, 36.1214]
         }
     }, {
         "type": "Feature",
@@ -20,7 +20,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "locations.needles.center"
+            "coordinates": [-119.5936, 37.7455]
         }
     }, {
         "type": "Feature",
@@ -30,7 +30,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.yosemite.center"
+            "coordinates": [-121.1389, 44.3676]
         }
     }, {
         "type": "Feature",
@@ -40,7 +40,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.index.center"
+            "coordinates": [-121.5551, 47.8206]
         }
     }, {
         "type": "Feature",
@@ -50,7 +50,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.squamish.center"
+            "coordinates": [-123.1349, 49.6866]
         }
     }, {
         "type": "Feature",
@@ -60,7 +60,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.cityOfRocks.center"
+            "coordinates": [-113.724, 42.0778]
         }
     }, {
         "type": "Feature",
@@ -70,7 +70,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.jackson.center"
+            "coordinates": [-110.731201, 43.797665]
         }
     }, {
         "type": "Feature",
@@ -80,7 +80,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.winds.center"
+            "coordinates": [-109.204, 42.7551]
         }
     }, {
         "type": "Feature",
@@ -90,7 +90,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.eldo.center"
+            "coordinates": [-105.2950, 39.9307]
         }
     }, {
         "type": "Feature",
@@ -100,7 +100,7 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.rifle.center"
+            "coordinates": [-107.6912, 39.7159]
         }
     },
     {
@@ -111,12 +111,11 @@ var markers = {
         },
         "geometry": {
             "type": "Point",
-            "coordinates": "location.maple.center"
+            "coordinates": [-111.6867, 39.5564]
         }
     },
     ]
 };
-
 
 
 var map = new mapboxgl.Map({
