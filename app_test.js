@@ -24,98 +24,32 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Smith Rock</div><p><a>Check out more routes and information on </a> <a href=\"http://www.mountainproject.com/v/smith-rock/105788989\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Smith Rock</div><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="weather/lib/weather.js"></script>
+    <script>
+        Weather.getCurrent( "Guntersville", function( current ) {
+            $( "#current" ).html( "Temperature: " + current.temperature() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( current.temperature() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( current.temperature() ) + "&deg;C" +
+                "<br />Current Conditions: " + current.conditions() );
+        });
+        Weather.getForecast( "Guntersville", function ( forecast ) {
+            $( "#forecast" ).html( "High: " + forecast.high() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( forecast.high() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( forecast.high() ) + "&deg;C<br />Low: " +
+                forecast.low() + "&deg;K or " +
+                Weather.kelvinToFahrenheit( forecast.low() ) + "&deg;F or " +
+                Weather.kelvinToCelsius( forecast.low() ) + "&deg;C" );
+        });
+    </script>",
             "marker-symbol": "park"
         },
         "geometry": {
             "type": "Point",
             "coordinates": [-121.1389, 44.3676]
         }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Index</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/index-/105790635\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-121.5551, 47.8206]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Squamish</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/squamish/105798170\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-123.1349, 49.6866]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">City of Rocks</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/city-of-rocks/105739322\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-113.724, 42.0778]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Grand Teton National Park</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/grand-teton-national-park/105802912\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-110.731201, 43.797665]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Wind River Range</div><p><a>Check out more routes and information on </a><a href=\"https://www.mountainproject.com/v/wind-river-range/105823538\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-109.204, 42.7551]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Eldorado Canyon</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/eldorado-canyon-sp/105744246\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-105.2950, 39.9307]
-        }
-    }, {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Rifle</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/rifle-mountain-park/105744310\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-107.6912, 39.7159]
-        }
-    },
-    {
-        "type": "Feature",
-        "properties": {
-            "description": "<div class=\"marker-title\">Maple Canyon</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/maple-canyon/105739298\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
-            "marker-symbol": "park"
-        },
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-111.6867, 39.5564]
-        }
-    },
-    ]
+    }]
 };
-
 
 
 var map = new mapboxgl.Map({
@@ -244,7 +178,7 @@ var locations = {
     },
     'eldo': {
         duration: 17000,
-        bearing: 270,
+        bearing: 90,
         center: [-105.2950, 39.9307],
         zoom: 14.3,
         pitch: 20
