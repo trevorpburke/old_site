@@ -187,14 +187,14 @@ var locations = {
         pitch: 45
     },
     'needles': {
-        duration: 17000,
+        duration: 10000,
         center: [-118.5044, 36.1214],
         bearing: 30,
         zoom: 12,
         pitch: 20
     },
     'yosemite': {
-        duration: 17000,
+        duration: 10000,
         bearing: 0,
         center: [-119.5936, 37.7455],
         zoom: 12,
@@ -202,13 +202,13 @@ var locations = {
         pitch: 60
     },
     'smith': {
-        duration: 17000,
+        duration: 10000,
         bearing: 90,
         center: [-121.1389, 44.3676],
         zoom: 13.3
     },
     'index': {
-        duration: 17000,
+        duration: 10000,
         bearing: 45,
         center: [-121.5551, 47.8206],
         zoom: 13.3,
@@ -216,48 +216,48 @@ var locations = {
         speed: 0.5
     },
     'squamish': {
-        duration: 17000,
+        duration: 10000,
         bearing: 180,
         center: [-123.1349, 49.6866],
         zoom: 12.3
     },
     'cityOfRocks': {
-        duration: 17000,
+        duration: 10000,
         bearing: 90,
         center: [-113.724, 42.0778],
         zoom: 12.1,
         pitch: 40
     },
     'jackson': {
-        duration: 17000,
+        duration: 10000,
         bearing: 270,
         center: [-110.731201, 43.797665],
         zoom: 10.9,
         pitch: 35
     },
     'winds': {
-        duration: 17000,
+        duration: 10000,
         bearing: 0,
         center: [-109.204, 42.7551],
         zoom: 12.3,
         pitch: 20
     },
     'eldo': {
-        duration: 17000,
+        duration: 10000,
         bearing: 270,
         center: [-105.2950, 39.9307],
         zoom: 14.3,
         pitch: 20
     },
     'rifle': {
-        duration: 17000,
+        duration: 10000,
         bearing: 90,
         center: [-107.6912, 39.7159],
         zoom: 14.3,
         pitch: 20
     },
     'maple': {
-        duration: 17000,
+        duration: 10000,
         bearing: 90,
         center: [-111.6867, 39.5564],
         zoom: 14.3,
