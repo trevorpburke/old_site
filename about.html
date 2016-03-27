@@ -1,43 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Trevor Burke</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <h1>Trevor Burke</h1>
-            </div>
-            <div id="content">
-                <div id="nav">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a class="selected" href="index.html">Home</a></li>
-                        </br>
-                        <li><a class="about" href="about.html">About</a></li>
-                        </br>
-                        <li><a class="contact" href="contact.html">Contact</a></li>
-                        </br>
-                        <li><a class="map" href="climb_map.html">Ultimate Climbing Roadtrip</a></li>
-                    </ul>
-                </div>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Trevor Burke</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="climb_map.html" target="blank">Ultimate Climbing Roadtrip Map</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-                <div id="main">
-                    <h2>About</h2>
-                    <ul>
-                        <li>Early 20s Bay Area native</li>
-                        </br>
-                        <li>Aspiring data scientist and web developer</li>
-                        </br>
-                        <li>Interested in machine learning, GIS, and web applications</li>
-                        </br>
-                        <li>Climber, biker, skiier, adventurer</li>
-                    </ul>
-                        <img src="images/climbing_ent_gully.jpg" width="600px" alt="ent gully" />
-                </div>
-            </div>
-            <div id="footer">
-                Copyright &copy; 2016 Trevor Burke
-            </div>
+    <div class="container">
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 class="text-center">Trevor Burke</h1>
+        <p>Aspiring web development engineer</p>
+        <p>Climber, biker, skiier, adventurer
+        </p>
+        <p>Interested in data analysis, visualization, and machine learning</p>
+      
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../docs/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+</body>
 </html>

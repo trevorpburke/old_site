@@ -1,39 +1,68 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Trevor Burke</title>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
-    <body>
-        <div id="container">
-            <div id="header">
-                <h1>Trevor Burke</h1>
-            </div>
-            <div id="content">
-                <div id="nav">
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a class="selected" href="index.html">Home</a></li>
-                        </br>
-                        <li><a class="about" href="about.html">About</a></li>
-                        </br>
-                        <li><a class="contact" href="contact.html">Contact</a></li>
-                        </br>
-                        <li><a class="map" href="climb_map.html">Ultimate Climbing Roadtrip</a></li>
-                    </ul>
-                </div>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Trevor Burke</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="climb_map.html" target="blank">Ultimate Climbing Roadtrip Map</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-                <div id="main">
-                    <h2>Contact</h2>
-                    <a href="https://www.linkedin.com/pub/trevor-burke/4b/782/921">
-                      <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View Trevor Burke's profile on LinkedIn"></a>
+    <div class="container">
 
-                    <p><a target="_blank" title="follow me on facebook" href="https://www.facebook.com/trevor.burke.1654"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook40x40.png" border=0></a></p>
-                    <a class="github logo" href="https://github.com/trevorpburke"><img src="images/GitHub-Mark-64px.png" alt="github" /></a>
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1 class="text-center">Trevor Burke</h1>
+        <p>trevorpburke at gmail dot com</p>
+        </br>
+        <p><a href="https://github.com/trevorpburke/" target="blank"><img src="images/GitHub-Mark-64px.png"></p>
+        </br>
+        <p><a href="https://twitter.com/trevorpburke" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @trevorpburke</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+      </div>
 
-                </div>
-            </div>
-            <div id="footer">
-                Copyright &copy; 2016 Trevor Burke
-            </div>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../docs/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+
+</body>
 </html>
