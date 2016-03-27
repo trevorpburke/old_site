@@ -4,8 +4,9 @@ var markers = {
     "features": [{
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">The Needles</div><p><a>Check out more routes and information on </a> <a href=\"http://www.mountainproject.com/v/the-needles--kern-river/105834180\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">The Needles</div><div><p><a>Check out more routes and information on </a> <a href=\"http://www.mountainproject.com/v/the-needles--kern-river/105834180\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a><p>ADD WEATHER DATA</p></div>",
             "marker-symbol": "park"
+
         },
         "geometry": {
             "type": "Point",
