@@ -4,7 +4,7 @@ var markers = {
     "features": [{
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">The Needles</div><div><p><a>Check out more routes and information on </a> <a href=\"http://www.mountainproject.com/v/the-needles--kern-river/105834180\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a><p>ADD WEATHER DATA</p></div>",
+            "description": "<div class=\"marker-title\">The Needles</div><div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/the-needles--kern-river/105834180\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a></div>",
             "marker-symbol": "park"
 
         },
@@ -15,7 +15,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Yosemite NP</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/yosemite-national-park/105833381\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Yosemite NP</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/yosemite-national-park/105833381\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -25,7 +25,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Smith Rock</div><p><a>Check out more routes and information on </a> <a href=\"http://www.mountainproject.com/v/smith-rock/105788989\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Smith Rock</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/smith-rock/105788989\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -35,7 +35,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Index</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/index-/105790635\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Index</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/index-/105790635\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -45,7 +45,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Squamish</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/squamish/105798170\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Squamish</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/squamish/105798170\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -55,7 +55,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">City of Rocks</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/city-of-rocks/105739322\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">City of Rocks</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/city-of-rocks/105739322\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -65,7 +65,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Grand Teton National Park</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/grand-teton-national-park/105802912\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Grand Teton National Park</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/grand-teton-national-park/105802912\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -75,7 +75,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Wind River Range</div><p><a>Check out more routes and information on </a><a href=\"https://www.mountainproject.com/v/wind-river-range/105823538\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Wind River Range</div><p>Check out more routes and information on <a href=\"https://www.mountainproject.com/v/wind-river-range/105823538\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -85,7 +85,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Eldorado Canyon</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/eldorado-canyon-sp/105744246\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Eldorado Canyon</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/eldorado-canyon-sp/105744246\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -95,7 +95,7 @@ var markers = {
     }, {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Rifle</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/rifle-mountain-park/105744310\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Rifle</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/rifle-mountain-park/105744310\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
@@ -106,7 +106,7 @@ var markers = {
     {
         "type": "Feature",
         "properties": {
-            "description": "<div class=\"marker-title\">Maple Canyon</div><p><a>Check out more routes and information on </a><a href=\"http://www.mountainproject.com/v/maple-canyon/105739298\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
+            "description": "<div class=\"marker-title\">Maple Canyon</div><p>Check out more routes and information on <a href=\"http://www.mountainproject.com/v/maple-canyon/105739298\" target=\"_blank\" title=\"Opens in a new window\">MountainProject.com</a>",
             "marker-symbol": "park"
         },
         "geometry": {
