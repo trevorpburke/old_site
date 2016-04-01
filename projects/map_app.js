@@ -2,6 +2,25 @@ L.mapbox.accessToken = 'pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Y
 var geocoder = L.mapbox.geocoder('mapbox.places'),
     map = L.mapbox.map('map', 'examples.map-h67hf2ic');
 
+document.getElementById("search").addEventListener("keypress",
+                                                    changeMapAndSong);
+
+var spotifyApi = new SpotifyWebApi();
+
+function changeMapAndSong(){
+    if (event.keyCode == "13"){
+        geocoder.query(this.value, showMap);
+        spotifyApi.searchTracks(this.value)
+            .then(function(data){
+                console.log('Search by ' + this.value + " ", data);
+            }, function(err){
+                console.error(err);
+            })
+    }
+}
+
+
+
 function showMap(err, data) {
     // The geocoder can return an area, like a city, or a
     // point, like an address. Here we handle both cases,
@@ -20,6 +39,7 @@ function musicQueue(){
     // maybe implement mapbox or html5 location request to automate music queue 
 }
 
+
 function changeMapStyle(){
     // TODO option to change map style? 
 }
@@ -27,5 +47,6 @@ function changeMapStyle(){
 function makePlaylist() {
     // TODO allow users to create of songs about city 
 }
+
 
 // OAuth to allow users to save playlists made? 

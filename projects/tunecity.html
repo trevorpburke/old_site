@@ -16,6 +16,7 @@
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+<script src="spotify-web-api.js"></script>
 <style>
     #map {
         margin-top: 150px; 
@@ -31,8 +32,8 @@
 <body>
 <div id='map'></div>
     <div class="container">
-            <h2 class="center-text">TuneCity | Best songs about your city!</h2>
-        <input placeholder="Search here..." class="input-lg"type="text" id="search" onkeypress="Javascript: if(event.keyCode==13) {geocoder.query(this.value, showMap)}"></input>
+            <h2 class="center-text">TuneCity | The best songs about your city!</h2>
+            <input autocomplete="off" placeholder="Search here..." class="input-lg"type="text" id="search" ></input>
     </div>
 </div>
 <script src="map_app.js"></script>
