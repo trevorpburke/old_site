@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<title>TuneCity</title>
+
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+<style>
+    #map {
+        margin-top: 150px; 
+        position:absolute; 
+        top:0; bottom:0px; 
+        width:100%;}
+</style>
+</head>
+<body>
+<div id='map'></div>
+    <div class="container">
+            <h2 class="center-text">TuneCity | Best songs about your city!</h2>
+    <div class="form-group">
+        <label for="sel1"></label>
+        <select class="form-control" id="sel1" onchange="geocoder.query(this.value, showMap)">
+            <option id="choose">Choose one</option>
+            <!--  !-->
+            <option id="sf" >San Francisco, CA</option>
+            <!-- Empire State of Mind by the Rolling Stone !-->
+            <option id="nyc">New York City, NY</option>
+            <!-- London Calling by The Clash !-->
+            <option id="london">London, UK</option>
+            <!-- Viva Las Vegas by Elvis !-->
+            <option id="vegas">Las Vegas, NV</option>
+            <!-- LA Woman by The Doors !-->
+            <option id="la">Los Angeles, CA</option>
+            <!-- House of the Rising Sun by the Animals !-->
+            <option id="newOrleans">New Orleans, LA</option>
+            <option id="newOrleans">Chicago, IL</option>
+        </select>
+    </div>
+    </div>
+<script src="map_app.js"></script>
+</body>
+</html>
+
