@@ -21,34 +21,20 @@
         margin-top: 150px; 
         position:absolute; 
         top:0; bottom:0px; 
-        width:100%;}
+        width:100%;
+    }
+    #search {
+        font-size: 18px;
+    }
 </style>
 </head>
 <body>
 <div id='map'></div>
     <div class="container">
             <h2 class="center-text">TuneCity | Best songs about your city!</h2>
-    <div class="form-group">
-        <label for="sel1"></label>
-        <select class="form-control" id="sel1" onchange="geocoder.query(this.value, showMap)">
-            <option id="choose">Choose one</option>
-            <!--  !-->
-            <option id="sf" >San Francisco, CA</option>
-            <!-- Empire State of Mind by the Rolling Stone !-->
-            <option id="nyc">New York City, NY</option>
-            <!-- London Calling by The Clash !-->
-            <option id="london">London, UK</option>
-            <!-- Viva Las Vegas by Elvis !-->
-            <option id="vegas">Las Vegas, NV</option>
-            <!-- LA Woman by The Doors !-->
-            <option id="la">Los Angeles, CA</option>
-            <!-- House of the Rising Sun by the Animals !-->
-            <option id="newOrleans">New Orleans, LA</option>
-            <option id="newOrleans">Chicago, IL</option>
-        </select>
+        <input placeholder="Search here..." class="input-lg"type="text" id="search" onkeypress="Javascript: if(event.keyCode==13) {geocoder.query(this.value, showMap)}"></input>
     </div>
-    </div>
+</div>
 <script src="map_app.js"></script>
 </body>
 </html>
-
