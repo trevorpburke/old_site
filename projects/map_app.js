@@ -7,18 +7,35 @@ document.getElementById("search").addEventListener("keypress",
 
 var spotifyApi = new SpotifyWebApi();
 
+/*var results = function(){
+    if (event.keyCode == "13"){
+        var data=this.value;
+        geocoder.query(this.value, showMap);
+    }
+}
+*/
+
+
 function changeMapAndSong(){
     if (event.keyCode == "13"){
+        var data=this.value;
         geocoder.query(this.value, showMap);
         spotifyApi.searchTracks(this.value)
             .then(function(data){
-                console.log('Search by ' + this.value + " ", data);
+                console.log(data);
+                audioObject = new Audio()
+                audioObject = new Audio(data.tracks.items[0].preview_url);
+                var current = audioObject.play();                
+                // TODO figure out way 
+                //to stop song on new keypress
+                // TODO stream top 5 songs
+                // TODO create visual player in top right screen
+                // TODO 
             }, function(err){
                 console.error(err);
             })
     }
 }
-
 
 
 function showMap(err, data) {
@@ -31,14 +48,6 @@ function showMap(err, data) {
         map.setView([data.latlng[0], data.latlng[1]], 11);
     }
 };
-
-
-function musicQueue(){
-	//  TODO <input> will query spotify for song matching input query
-    // need to include modal that informs user that inputted query does not match any songs 
-    // maybe implement mapbox or html5 location request to automate music queue 
-}
-
 
 function changeMapStyle(){
     // TODO option to change map style? 
