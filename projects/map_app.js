@@ -24,7 +24,6 @@ let searchSong = document.addEventListener('DOMContentLoaded', function() {
         geocoder.query(this.value, showMap);
         spotifyApi.searchTracks(this.value)
             .then(function(data){
-                console.log(data);
                 audioObject = new Audio(data.tracks.items[0].preview_url);
                 audioObject.play();
                 let artist = data.tracks.items[0].artists[0].name;
