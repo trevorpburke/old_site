@@ -16,6 +16,8 @@ window.onload = function() {
   document.getElementById("search").focus();
 };
 
+
+
 let searchSong = document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('search').addEventListener('keydown', function(e) {
     if (e.keyCode == 13) {
@@ -28,8 +30,6 @@ let searchSong = document.addEventListener('DOMContentLoaded', function() {
                 let artist = data.tracks.items[0].artists[0].name;
                 let song = data.tracks.items[0].name;
                 let albumUrl = data.tracks.items[0].album.images[1].url;
-                document.getElementById("artist").innerHTML = artist;
-                document.getElementById("song").innerHTML = song;
                 document.getElementById("album-img").src = albumUrl;
                 // TODO songs should stop on new keydown 
                 // TODO stream top 5 songs
