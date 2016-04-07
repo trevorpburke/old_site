@@ -31,6 +31,7 @@ let searchSong = document.addEventListener('DOMContentLoaded', function() {
                 let song = data.tracks.items[0].name;
                 let albumUrl = data.tracks.items[0].album.images[1].url;
                 document.getElementById("album-img").src = albumUrl;
+                console.log(song + " by " + artist);
                 // TODO songs should stop on new keydown 
                 // TODO stream top 5 songs
                 // TODO create visual player in top right screen
