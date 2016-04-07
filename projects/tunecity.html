@@ -17,7 +17,7 @@
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 <script src="spotify-web-api.js"></script>
-<style>
+<style type="text/css">
     #map {
         margin-top: 150px; 
         position:absolute; 
@@ -27,16 +27,29 @@
     #search {
         font-size: 18px;
     }
+    .topcorner{
+        position:absolute;
+        top:0;
+        right:0;
+    }
+    #album-img {
+        height: 150px;
+        width: 150px;
+        border:none;
+    }
+
+</style>
+
 </style>
 </head>
 <body>
-<div id='map'></div>
-    <div class="container">
-            <h2 class="center-text">TuneCity | Top rated songs about your city!</h2>
-            <input autocomplete="off" placeholder="Search here..." class="input-lg"type="text" id="search" autofocus></input>
-    </div>
-    <div id="results"></div>
-</div>
+    <div id='map'></div>
+        <div class="container">
+                <h2 class="center-text">TuneCity | Top rated songs about your city!</h2>
+                <input autocomplete="off" placeholder="Search here..." class="input-lg"type="text" id="search" autofocus></input>
+                <img id="album-img" class="topcorner" src=""></img>
+        </div>
+    
 <script src="map_app.js"></script>
 </body>
 </html>
