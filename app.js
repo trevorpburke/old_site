@@ -1,4 +1,96 @@
 mapboxgl.accessToken = "pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A";
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/satellite-hybrid-v8',
+    center: [-122.419, 37.7749295],
+    zoom: 11,
+    bearing: 27,
+    pitch: 45
+});
+
+map.on('style.load', function() {
+    // Add marker data as a new GeoJSON source.
+    map.addSource("markers", {
+        "type": "geojson",
+        "data": markers
+    });
+    map.addLayer({
+        "id": "markers",
+        "interactive": true,
+        "type": "symbol",
+        "source": "markers",
+        "layout": {
+            "icon-image": "{marker-symbol}-15",
+            "icon-allow-overlap": true
+        }
+    });
+});
+
+var popup = new mapboxgl.Popup();
+
+
+map.on('click', function (e) {
+    map.featuresAt(e.point, {
+        radius: 7.5, // Half the marker size (15px).
+        includeGeometry: true,
+        layer: 'markers'
+    }, function (err, features) {
+
+        if (err || !features.length) {
+            popup.remove();
+            return;
+        }
+
+        var feature = features[0];
+
+        // Populate the popup and set its coordinates
+        // based on the feature found.
+        popup.setLngLat(feature.geometry.coordinates)
+            .setHTML(feature.properties.description)
+            .addTo(map);
+    });
+});
+
+map.on('mousemove', function (e) {
+    map.featuresAt(e.point, {
+        radius: 7.5, // Half the marker size (15px).
+        layer: 'markers'
+    }, function (err, features) {
+        map.getCanvas().style.cursor = (!err && features.length) ? 'pointer' : '';
+    });
+});
+
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var locationNames = Object.keys(locations);
+    for (var i = 0, x = locationNames.length; i < x; i++) {
+        var locationName = locationNames[i];
+        if (isElementOnScreen(locationName)) {
+            setActiveLocation(locationName);
+            break;
+        }
+    }
+};
+
+var activeLocationName = 'sf';
+function setActiveLocation(locationName) {
+    if (locationName === activeLocationName) return;
+
+    map.flyTo(locations[locationName]);
+
+    document.getElementById(locationName).setAttribute('class', 'active');
+    document.getElementById(activeLocationName).setAttribute('class', '');
+
+    activeLocationName = locationName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
 var markers = {
     "type": "FeatureCollection",
     "features": [{
@@ -118,68 +210,6 @@ var markers = {
 };
 
 
-
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/satellite-hybrid-v8',
-    center: [-122.419, 37.7749295],
-    zoom: 11,
-    bearing: 27,
-    pitch: 45
-});
-
-map.on('style.load', function() {
-    // Add marker data as a new GeoJSON source.
-    map.addSource("markers", {
-        "type": "geojson",
-        "data": markers
-    });
-    map.addLayer({
-        "id": "markers",
-        "interactive": true,
-        "type": "symbol",
-        "source": "markers",
-        "layout": {
-            "icon-image": "{marker-symbol}-15",
-            "icon-allow-overlap": true
-        }
-    });
-});
-
-var popup = new mapboxgl.Popup();
-
-
-map.on('click', function (e) {
-    map.featuresAt(e.point, {
-        radius: 7.5, // Half the marker size (15px).
-        includeGeometry: true,
-        layer: 'markers'
-    }, function (err, features) {
-
-        if (err || !features.length) {
-            popup.remove();
-            return;
-        }
-
-        var feature = features[0];
-
-        // Populate the popup and set its coordinates
-        // based on the feature found.
-        popup.setLngLat(feature.geometry.coordinates)
-            .setHTML(feature.properties.description)
-            .addTo(map);
-    });
-});
-
-map.on('mousemove', function (e) {
-    map.featuresAt(e.point, {
-        radius: 7.5, // Half the marker size (15px).
-        layer: 'markers'
-    }, function (err, features) {
-        map.getCanvas().style.cursor = (!err && features.length) ? 'pointer' : '';
-    });
-});
-
 var locations = {
     'sf': {
         bearing: 27,
@@ -265,34 +295,3 @@ var locations = {
         pitch: 20
     }
 };
-
-
-// On every scroll event, check which element is on screen
-window.onscroll = function() {
-    var locationNames = Object.keys(locations);
-    for (var i = 0, x = locationNames.length; i < x; i++) {
-        var locationName = locationNames[i];
-        if (isElementOnScreen(locationName)) {
-            setActiveLocation(locationName);
-            break;
-        }
-    }
-};
-
-var activeLocationName = 'sf';
-function setActiveLocation(locationName) {
-    if (locationName === activeLocationName) return;
-
-    map.flyTo(locations[locationName]);
-
-    document.getElementById(locationName).setAttribute('class', 'active');
-    document.getElementById(activeLocationName).setAttribute('class', '');
-
-    activeLocationName = locationName;
-}
-
-function isElementOnScreen(id) {
-    var element = document.getElementById(id);
-    var bounds = element.getBoundingClientRect();
-    return bounds.top < window.innerHeight && bounds.bottom > 0;
-}

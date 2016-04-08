@@ -1,46 +1,42 @@
+window.onload = () => document.getElementById("search").focus();
+
 L.mapbox.accessToken = 'pk.eyJ1IjoidHJldm9ycGJ1cmtlIiwiYSI6ImNpazA2MzJwMTAwdDV4Ym01YjRxdThzODQifQ.TbsNOsG_WuAzfkT1fNcH6A';
-let geocoder = L.mapbox.geocoder('mapbox.places'),
+const geocoder = L.mapbox.geocoder('mapbox.places'),
     map = L.mapbox.map('map', 'examples.map-h67hf2ic');
 
-let spotifyApi = new SpotifyWebApi();
+const spotifyApi = new SpotifyWebApi();
 
-function showMap(err, data) {
-    if (data.lbounds) {
-        map.fitBounds(data.lbounds);
-    } else if (data.latlng) {
-        map.setView([data.latlng[0], data.latlng[1]], 11);
-    }
-};
-
-window.onload = function() {
-  document.getElementById("search").focus();
-};
-
-
-
-let searchSong = document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('search').addEventListener('keydown', function(e) {
-    if (e.keyCode == 13) {
+function query(e){
+    if (e.keyCode === 13) {
         geocoder.query(this.value, showMap);
         spotifyApi.searchTracks(this.value)
             .then(function(data){
-                audioObject = new Audio(data.tracks.items[0].preview_url);
+            	const track = data.tracks.items[0];
+                const audioObject = new Audio(track.preview_url);
                 audioObject.play();
-                let artist = data.tracks.items[0].artists[0].name;
-                let song = data.tracks.items[0].name;
-                let albumUrl = data.tracks.items[0].album.images[1].url;
+                const artist = track.artists[0].name;
+                const song = track.name;
+                const albumUrl = track.album.images[1].url;
                 document.getElementById("album-img").src = albumUrl;
                 console.log(song + " by " + artist);
-                // TODO songs should stop on new keydown 
-                // TODO stream top 5 songs
-                // TODO create visual player in top right screen
-                // TODO
             }, function(err){
                 console.error(err);
             })
     }
-  }, false);
+  }
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('search').addEventListener('keydown', query, false);
 });
+
+function showMap(err, data) {
+    if (data.lbounds) {
+        map.fitBounds(data.lbounds);
+    } 
+    if (data.latlng) {
+        map.setView([data.latlng[0], data.latlng[1]], 11);
+    }
+};
 
 
 function changeMapStyle(style){

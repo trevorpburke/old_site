@@ -1,46 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <meta charset=utf-8 />
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />        
+    <title>TuneCity</title>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+    <script src="spotify-web-api.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<title>TuneCity</title>
-
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
-<script src="spotify-web-api.js"></script>
-<style type="text/css">
-    #map {
-        margin-top: 150px; 
-        position:absolute; 
-        top:0; bottom:0px; 
-        width:100%;
-    }
-    #search {
-        font-size: 18px;
-    }
-    .topcorner{
-        position:absolute;
-        top:0;
-        right:0;
-    }
-    #album-img {
-        height: 150px;
-        width: 150px;
-        border:none;
-    }
-
-</style>
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id='map'></div>
@@ -49,7 +22,6 @@
                 <input autocomplete="off" placeholder="Search here..." class="input-lg"type="text" id="search" autofocus></input>
                 <img id="album-img" class="topcorner" src=""></img>
         </div>
-    
 <script src="map_app.js"></script>
 </body>
 </html>
