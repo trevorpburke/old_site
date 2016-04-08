@@ -12,6 +12,10 @@
         top:0;
         right:0;
     }
+    .topcorner:hover {
+    cursor: pointer;
+    }
+
     #album-img {
         height: 150px;
         width: 150px;
@@ -21,4 +25,19 @@
         position: absolute;
         top: 50px;
         left: 800px;
+    }
+    .border-style{
+        border: 40px;
+    }
+    .cover {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    background-size: cover;
+    }
+    .cover:hover {
+        cursor: pointer;
+    }
+    .cover.playing {
+        border: 5px solid #e45343;
     }

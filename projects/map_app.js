@@ -7,28 +7,16 @@ const geocoder = L.mapbox.geocoder('mapbox.places'),
 const spotifyApi = new SpotifyWebApi();
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('search').addEventListener('keydown', query, false);
-});
+  document.getElementById('search').addEventListener('keydown', mapSearch, false);
+  document.getElementById('search').addEventListener('keydown', songSearch, false);
+	}
+)
 
-function query(e){
-    if (e.keyCode === 13) {
-        geocoder.query(this.value, showMap);
-        spotifyApi.searchTracks(this.value)
-            .then(function(data){
-            	const track = data.tracks.items[0];
-                const audioObject = new Audio(track.preview_url);
-                audioObject.play();
-                const artist = track.artists[0].name;
-                const song = track.name;
-                const albumUrl = track.album.images[1].url;
-                document.getElementById("album-img").src = albumUrl;
-                const nowPlaying = document.getElementById('now-playing');
-                nowPlaying.innerHTML = 'Song: ' + song + '<br>' + 'Artist: ' + artist;
-            }, function(err){
-                console.error(err);
-            })
-    }
-  }
+function mapSearch(e){
+	if (e.keyCode === 13){
+		geocoder.query(this.value, showMap);
+	}
+}
 
 function showMap(err, data) {
     if (data.lbounds) {
@@ -37,14 +25,24 @@ function showMap(err, data) {
     if (data.latlng) {
         map.setView([data.latlng[0], data.latlng[1]], 11);
     }
-};
-
-function changeMapStyle(style){
-//     // TODO option to change map style? 
 }
 
-function makePlaylist() {
-    //TODO allow users to create playlist of songs about city 
+function songSearch(e){
+	if (e.keyCode === 13){
+		spotifyApi.searchTracks(this.value)
+			.then(function(data){
+				const track = data.tracks.items[0];
+				const artist = track.artists[0].name;
+	            const song = track.name;
+	            const albumUrl = track.album.images[1].url;
+	            document.getElementById("album-img").src = albumUrl;
+				document.getElementById('album-img').addEventListener('click', function(){
+					const audioObject = new Audio(track.preview_url);
+					const nowPlaying = document.getElementById('now-playing');
+	               	nowPlaying.innerHTML = 'Song: ' + song + '<br>' + 'Artist: ' + artist;
+	               	audioObject.pause();
+	               	audioObject.play();
+				}, false);
+			})
+	}
 }
-
-// TODO OAuth to allow users to save playlists made? 
