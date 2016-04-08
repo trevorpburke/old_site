@@ -6,6 +6,10 @@ const geocoder = L.mapbox.geocoder('mapbox.places'),
 
 const spotifyApi = new SpotifyWebApi();
 
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('search').addEventListener('keydown', query, false);
+});
+
 function query(e){
     if (e.keyCode === 13) {
         geocoder.query(this.value, showMap);
@@ -18,16 +22,13 @@ function query(e){
                 const song = track.name;
                 const albumUrl = track.album.images[1].url;
                 document.getElementById("album-img").src = albumUrl;
-                console.log(song + " by " + artist);
+                const nowPlaying = document.getElementById('now-playing');
+                nowPlaying.innerHTML = 'Song: ' + song + '<br>' + 'Artist: ' + artist;
             }, function(err){
                 console.error(err);
             })
     }
   }
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('search').addEventListener('keydown', query, false);
-});
 
 function showMap(err, data) {
     if (data.lbounds) {
@@ -37,7 +38,6 @@ function showMap(err, data) {
         map.setView([data.latlng[0], data.latlng[1]], 11);
     }
 };
-
 
 function changeMapStyle(style){
 //     // TODO option to change map style? 
