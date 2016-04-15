@@ -13,18 +13,25 @@
     <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
     <script src="spotify-web-api.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/lodash/4.11.1/lodash.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id='map'></div>
         <div class="container">
             <h2 class="center-text">TuneCity | Top rated songs about your city!</h2>
-            <input autocomplete="off" placeholder="Search here..." class="input-lg" type="text" id="search" autofocus></input>
-            <img id="album-img" onclick="border" class="topcorner" src=""></img>
+
+            <input autocomplete="off" placeholder="Search here..." class="input-lg" type="search" id="search" autofocus></input>
+            <button class='btn btn-primary' id="random">Random</button>
+
+            <img id="album-img" class="topcorner" src=""><audio id="song" src=""></audio></img>
         </div>
+
         <div class="container-fluid" id="song-info">
             <h4 class="center-text" id="now-playing"></h4>
         </div>
+
 <script src="map_app.js"></script>
 </body>
 </html>
