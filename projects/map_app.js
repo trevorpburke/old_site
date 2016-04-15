@@ -6,11 +6,12 @@ const geocoder = L.mapbox.geocoder('mapbox.places'),
 
 const spotifyApi = new SpotifyWebApi();
 const search = document.getElementById('search');
+const random = document.getElementById('random');
 
 document.addEventListener('DOMContentLoaded', function() {
   search.addEventListener('keydown', mapSearch, false);
   search.addEventListener('keydown', songSearch, false);
-  document.getElementById('random').addEventListener('click', randomCity, false);
+  random.addEventListener('click', randomCity, false);
   }
 )
 
@@ -92,3 +93,8 @@ function randomCity(){
         });
       })
 }
+
+function createPlaylist(e){
+
+}
+
