@@ -101,8 +101,7 @@ function createPlaylist(){
   const nowPlaying = document.getElementById('now-playing');
   const albumArt = document.getElementById('album-div');
   albumArt.addEventListener('click', function(){
-    const regex = /(<([^>]+)>)/ig;
-    const result = nowPlaying.innerHTML.replace(regex, "");
+    const result = nowPlaying.innerHTML;
     const div = document.getElementById('playlist-list');
     playlistSet.add(result);
     playlistSet.forEach(function(a){
