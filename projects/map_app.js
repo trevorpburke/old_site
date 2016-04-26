@@ -12,23 +12,33 @@ document.addEventListener('DOMContentLoaded', function() {
   search.addEventListener('keydown', mapSearch, false);
   search.addEventListener('keydown', songSearch, false);
   random.addEventListener('click', randomCity, false);
-  document.getElementById('album-img').addEventListener('click', createPlaylist, false);
 
+  /* 
+  if (randomCity.called || songSearch.called){
+    .then(function(){
+      
+    })  
+  }
+  */
   }
 )
 
-function mapSearch(e){
+const mapSearch = function (e){
   if (e.keyCode === 13){
     geocoder.query(this.value, function(err, data){
       if (data.lbounds) {
         map.fitBounds(data.lbounds);
+        return true;
       } 
       if (data.latlng) {
         map.setView([data.latlng[0], data.latlng[1]], 11);
+        return true;
       }
     });
   }
 }
+
+const playlist = new Set();
 
 function songSearch(e){
   if (e.keyCode === 13){
@@ -93,22 +103,51 @@ function randomCity(){
             song.pause();  
           })
         });
+
       })
 }
 
-function createPlaylist(){
-  const playlistSet = new Set();
-  const nowPlaying = document.getElementById('now-playing');
-  const albumArt = document.getElementById('album-div');
-  albumArt.addEventListener('click', function(){
-    const result = nowPlaying.innerHTML;
-    const div = document.getElementById('playlist-list');
-    playlistSet.add(result);
-    playlistSet.forEach(function(a){
-      div.innerHTML += `${a} <br>`;
-      console.log(playlistSet);
-    })
-  })
-}
 
+// var createPlaylist = function() {
+
+//   }
+
+// }
+
+// const nowPlaying = document.getElementById('now-playing');
+// const albumArt = document.getElementById('album-div');
+
+// const playlistSet = new Set();
+
+// albumArt.addEventListener('click', function(){
+//     const result = nowPlaying.textContent;
+//     const div = document.getElementById('playlist-list');
+//     playlistSet.add(result);
+//     playlistSet.forEach(function(a){
+//       div.innerHTML += `${a} <br>`;
+//       console.log(playlistSet);
+//     })
+//   })
+
+
+// function createPlaylist(){
+
+// }
+
+
+// var node = document.createElement("LI");                 // Create a <li> node
+// var textnode = document.createTextNode("Water");         // Create a text node
+// node.appendChild(textnode);                              // Append the text to <li>
+// document.getElementById("myList").appendChild(node);     // Append <li> to <ul> with id="myList"
+
+
+
+
+/*
+This simple answer is only call createPlaylist once. 
+But it depends on how you're defining your "playlists". Now it seems you're calling it multiple times with
+ a single album-div meaning each call gives that div an additional set and click handler. 
+ You can replace that div for the createPlaylist call, or define set and the handler outside of the createPlaylist call.
+
+*/
 
