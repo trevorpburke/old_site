@@ -41,3 +41,12 @@
     .cover.playing {
         border: 5px solid #e45343;
     }
+    #playlist-scrollbox{
+        height:100px;
+        width: 300px;
+        border: 1px;
+        overflow:auto;
+        position: absolute;
+        top: 50px;
+        left: 500px;
+    }

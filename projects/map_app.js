@@ -6,12 +6,14 @@ const geocoder = L.mapbox.geocoder('mapbox.places'),
 
 const spotifyApi = new SpotifyWebApi();
 const search = document.getElementById('search');
-const random = document.getElementById('random');
+const random = document.getElementById('random'); 
 
 document.addEventListener('DOMContentLoaded', function() {
   search.addEventListener('keydown', mapSearch, false);
   search.addEventListener('keydown', songSearch, false);
   random.addEventListener('click', randomCity, false);
+  document.getElementById('album-img').addEventListener('click', createPlaylist, false);
+
   }
 )
 
@@ -94,7 +96,20 @@ function randomCity(){
       })
 }
 
-function createPlaylist(e){
-
+function createPlaylist(){
+  const playlistSet = new Set();
+  const nowPlaying = document.getElementById('now-playing');
+  const albumArt = document.getElementById('album-div');
+  albumArt.addEventListener('click', function(){
+    const regex = /(<([^>]+)>)/ig;
+    const result = nowPlaying.innerHTML.replace(regex, "");
+    const div = document.getElementById('playlist-list');
+    playlistSet.add(result);
+    playlistSet.forEach(function(a){
+      div.innerHTML += `${a} <br>`;
+      console.log(playlistSet);
+    })
+  })
 }
+
 
