@@ -23,22 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 )
 
-const mapSearch = function (e){
+function mapSearch (e){
   if (e.keyCode === 13){
     geocoder.query(this.value, function(err, data){
       if (data.lbounds) {
         map.fitBounds(data.lbounds);
-        return true;
       } 
       if (data.latlng) {
         map.setView([data.latlng[0], data.latlng[1]], 11);
-        return true;
       }
     });
   }
 }
-
-const playlist = new Set();
 
 function songSearch(e){
   if (e.keyCode === 13){
